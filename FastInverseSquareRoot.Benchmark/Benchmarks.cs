@@ -8,10 +8,13 @@ namespace FastInverseSquareRoot.Benchmarks
     {
         private const int N = 1_000_000;
         private List<float> data;
+        private Random random;
 
         public Benchmarks()
         {
             data = new List<float>();
+            random = new Random();
+            
             for(int i = 0; i < N; i++)
             {
                 data.Add(NextFloat(0.0001f, float.MaxValue));
@@ -44,7 +47,6 @@ namespace FastInverseSquareRoot.Benchmarks
 
         private static float NextFloat(float min, float max)
         {
-            var random = new Random(420);
             double val = (random.NextDouble() * (max - min) + min);
             return (float)val;
         }
