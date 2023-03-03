@@ -33,14 +33,11 @@ jobs:
       with:
         dotnet-version: 6.0.x
         
-    # Execute all unit tests in the solution
     - name: Build solution
       run: dotnet build -c Release
       
-    # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test -c Release
 
-    # Execute all unit tests in the solution
-    - name: Execute unit tests
-      run: dotnet run -c Release
+    - name: Run benchmarks
+      run: dotnet run -c Release --project FastInverseSquareRoot.Benchmark/FastInverseSquareRoot.Benchmarks.csproj
