@@ -6,9 +6,9 @@ namespace FastInverseSquareRoot.Benchmarks
     [MarkdownExporter, HtmlExporter]
     public class Benchmarks
     {
+        private Random random;
         private const int N = 1_000_000;
         private List<float> data;
-        private Random random;
 
         public Benchmarks()
         {
@@ -45,7 +45,7 @@ namespace FastInverseSquareRoot.Benchmarks
             return result;
         }
 
-        private static float NextFloat(float min, float max)
+        private float NextFloat(float min, float max)
         {
             double val = (random.NextDouble() * (max - min) + min);
             return (float)val;
