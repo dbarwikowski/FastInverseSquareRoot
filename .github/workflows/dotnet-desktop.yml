@@ -35,12 +35,12 @@ jobs:
         
     # Execute all unit tests in the solution
     - name: Build solution
-      run: dotnet build
+      run: dotnet build -c Release
       
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test
+      run: dotnet test -c Release
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet run
+      run: dotnet run -c Release
